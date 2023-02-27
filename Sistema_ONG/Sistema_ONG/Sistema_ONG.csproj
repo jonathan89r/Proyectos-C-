@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55346B2A-110E-4637-85EF-B2FBBB0A4B37}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sistema_ONG</RootNamespace>
+    <AssemblyName>Sistema_ONG</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Modulo_Beneficiarios\FormAgregarBeneficiarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo_Beneficiarios\FormAgregarBeneficiarios.Designer.cs">
+      <DependentUpon>FormAgregarBeneficiarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo_Beneficiarios\Beneficiario.cs" />
+    <Compile Include="Modulo_Beneficiarios\BeneficiarioController.cs" />
+    <Compile Include="Modulo_Beneficiarios\Conexion.cs" />
+    <Compile Include="Modulo_Beneficiarios\FormConsultarBeneficiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo_Beneficiarios\FormConsultarBeneficiario.Designer.cs">
+      <DependentUpon>FormConsultarBeneficiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo_FondosIncentivos\Clase_FondosIncentivos.cs" />
+    <Compile Include="Modulo_FondosIncentivos\FormFondosIncentivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo_FondosIncentivos\FormFondosIncentivos.Designer.cs">
+      <DependentUpon>FormFondosIncentivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo_Incentivos\Clase_Incentivos.cs" />
+    <Compile Include="Modulo_EntregaIncentivos\Clase_EntregaIncentivos.cs" />
+    <Compile Include="Modulo_Incentivos\FormIncentivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo_Incentivos\FormIncentivos.Designer.cs">
+      <DependentUpon>FormIncentivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo_EntregaIncentivos\FormIncentivosEntregados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo_EntregaIncentivos\FormIncentivosEntregados.Designer.cs">
+      <DependentUpon>FormIncentivosEntregados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo_EntregaIncentivos\FormIncentivosEntregadosModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo_EntregaIncentivos\FormIncentivosEntregadosModificar.Designer.cs">
+      <DependentUpon>FormIncentivosEntregadosModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo_Incentivos\FormIncentivosModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo_Incentivos\FormIncentivosModificar.Designer.cs">
+      <DependentUpon>FormIncentivosModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo_Usuarios\formUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo_Usuarios\formUsuarios.Designer.cs">
+      <DependentUpon>formUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo_Usuarios\Clase_Usuario.cs" />
+    <Compile Include="menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu.Designer.cs">
+      <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo_EntregaIncentivos\Objeto_EntregaIncentivos.cs" />
+    <Compile Include="Modulo_Incentivos\Objeto_Incentivos.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Utils\UtilidadesClases.cs" />
+    <EmbeddedResource Include="Modulo_Beneficiarios\FormAgregarBeneficiarios.resx">
+      <DependentUpon>FormAgregarBeneficiarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo_Beneficiarios\FormConsultarBeneficiario.resx">
+      <DependentUpon>FormConsultarBeneficiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo_FondosIncentivos\FormFondosIncentivos.resx">
+      <DependentUpon>FormFondosIncentivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo_Incentivos\FormIncentivos.resx">
+      <DependentUpon>FormIncentivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo_EntregaIncentivos\FormIncentivosEntregados.resx">
+      <DependentUpon>FormIncentivosEntregados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo_EntregaIncentivos\FormIncentivosEntregadosModificar.resx">
+      <DependentUpon>FormIncentivosEntregadosModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo_Incentivos\FormIncentivosModificar.resx">
+      <DependentUpon>FormIncentivosModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo_Usuarios\formUsuarios.resx">
+      <DependentUpon>formUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu.resx">
+      <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\bloquear.png" />
+    <Content Include="Resources\usuario.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

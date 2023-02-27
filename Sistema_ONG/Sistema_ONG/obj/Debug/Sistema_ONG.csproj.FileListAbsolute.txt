@@ -1,0 +1,32 @@
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\bin\Debug\Sistema_ONG.exe.config
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\bin\Debug\Sistema_ONG.exe
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\bin\Debug\Sistema_ONG.pdb
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.csproj.AssemblyReference.cache
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.csproj.SuggestedBindingRedirects.cache
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.Properties.Resources.resources
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.csproj.GenerateResource.cache
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.csproj.CoreCompileInputs.cache
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.exe
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.pdb
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.login.resources
+C:\Users\NELSON FABIAN\source\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.menu.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.frmIncentivos.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.frmIncentivosEntregados.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.frmIncentivosEntregadosModificar.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.frmIncentivosModificar.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.login.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.frmMenu.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.Properties.Resources.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.csproj.GenerateResource.cache
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.csproj.CoreCompileInputs.cache
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\bin\Debug\Sistema_ONG.exe.config
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\bin\Debug\Sistema_ONG.exe
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\bin\Debug\Sistema_ONG.pdb
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.exe
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.pdb
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.frmBeneficiario.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.frmConsultarBeneficiario.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.Modulo_Usuarios.frmUsuarios.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.csproj.AssemblyReference.cache
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.Modulo_FondosIncentivos.frmFondosIncentivos.resources
+C:\Users\Rodriguez\Desktop\Proyecto\Sistema_ONG\Sistema_ONG\obj\Debug\Sistema_ONG.csproj.SuggestedBindingRedirects.cache

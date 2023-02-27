@@ -1,0 +1,300 @@
+CREATE DATABASE [BD_SISTEMA_ONG]
+GO
+USE BD_SISTEMA_ONG
+
+
+
+/****** Object:  Table [dbo].[TABLA_TIPO_USUARIO]    Script Date: 1/12/2022 08:41:48 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TABLA_TIPO_USUARIO](
+	[ID_TIPO_USUARIO] [int] IDENTITY(1,1) NOT NULL,
+	[TIPO_USUARIO] [varchar](150) NOT NULL,
+ CONSTRAINT [PK_TABLA_TIPO_USUARIO] PRIMARY KEY CLUSTERED 
+(
+	[ID_TIPO_USUARIO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+INSERT INTO TABLA_TIPO_USUARIO VALUES('Administrador')
+INSERT INTO TABLA_TIPO_USUARIO VALUES('Normal')
+
+
+/****** Object:  Table [dbo].[TABLA_USUARIO]    Script Date: 1/12/2022 08:41:48 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TABLA_USUARIO](
+	[ID_USUARIO] [int] IDENTITY(1,1) NOT NULL,
+	[NOMBRE_EMPLEADO] [varchar](250) NOT NULL,
+	[APELLIDO_EMPLEADO] [varchar](250) NOT NULL,
+	[FECHA_NACIMIENTO] [date] NOT NULL,
+	[SEXO_EMPLEADO] [varchar](50) NOT NULL,
+	[DIRECCION_EMPLEADO] [varchar](500) NOT NULL,
+	[NOMBRE_USUARIO] [varchar](50) NOT NULL,
+	[PASSWORD_USUARIO] [varchar](50) NOT NULL,
+	[ID_TIPO_USUARIO] [int] NOT NULL,
+ CONSTRAINT [PK_TABLA_USUARIO] PRIMARY KEY CLUSTERED 
+(
+	[ID_USUARIO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+INSERT INTO TABLA_USUARIO VALUES('Juan', 'Perez', '1989-05-25', 'Masculino', 'San Salvador', 'juan', '1234', 1)
+
+
+/****** Object:  Table [dbo].[Tabla_Fondo_Incentivo]    Script Date: 1/12/2022 08:41:48 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Tabla_Fondo_Incentivo](
+	[Id_Fondo_Incentivo] [int] IDENTITY(1,1) NOT NULL,
+	[Fondo_Incentivo] [varchar](500) NULL,
+ CONSTRAINT [PK_Tabla_Fondo_Incentivo] PRIMARY KEY CLUSTERED 
+(
+	[Id_Fondo_Incentivo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+/****** Object:  Table [dbo].[Tabla_Incentivos]    Script Date: 1/12/2022 08:41:48 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Tabla_Incentivos](
+	[Id_Incentivo] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre_Incentivo] [varchar](500) NOT NULL,
+	[Descripcion_Incentivo] [varchar](1000) NOT NULL,
+	[Id_Fondo_Incentivo] [int] NULL,
+ CONSTRAINT [PK_Tabla_Incentivos] PRIMARY KEY CLUSTERED 
+(
+	[Id_Incentivo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+/****** Object:  Table [dbo].[Tabla_Beneficiarios]    Script Date: 1/12/2022 08:41:48 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Tabla_Beneficiarios](
+	[Id_Beneficiario] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](250) NOT NULL,
+	[Apellido] [varchar](250) NOT NULL,
+	[Numero_DUI] [int] NOT NULL,
+	[Fecha_Nacimiento] [date] NOT NULL,
+	[Sexo_Beneficiario] [varchar](50) NOT NULL,
+	[Direccion_Beneficiario] [varchar](350) NOT NULL,
+	[Id_Usuario] [int] NOT NULL,
+ CONSTRAINT [PK_Tabla_Beneficiarios] PRIMARY KEY CLUSTERED 
+(
+	[Id_Beneficiario] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+/****** Object:  Table [dbo].[Tabla_Incentivos_Entregados]    Script Date: 1/12/2022 08:41:48 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Tabla_Incentivos_Entregados](
+	[Id_Incentivo_Entregado] [int] IDENTITY(1,1) NOT NULL,
+	[Id_Beneficiario] [int] NOT NULL,
+	[Id_Incentivo] [int] NOT NULL,
+	[Fecha_Entrega] [datetime] NOT NULL,
+	[Id_Usuario] [int] NOT NULL,
+ CONSTRAINT [PK_Tabla_Incentivos_Entregados] PRIMARY KEY CLUSTERED 
+(
+	[Id_Incentivo_Entregado] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+/****** Object:  StoredProcedure [dbo].[ActualizarUsuarios]    Script Date: 1/12/2022 08:41:48 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[ActualizarUsuarios] 
+	@id_usuario int, @nombre_empleado varchar(250), @apellido_empleado varchar(250), @fecha_nacimiento date, 
+@sexo_empleado varchar(50), @direccion_empleado varchar(500), @nombre_usuario varchar(50),
+@password_usuario varchar(50), @id_tipo_usuario int
+
+AS
+BEGIN
+	update TABLA_USUARIO set NOMBRE_EMPLEADO=@nombre_empleado, APELLIDO_EMPLEADO=@apellido_empleado,
+FECHA_NACIMIENTO=@fecha_nacimiento, SEXO_EMPLEADO=@sexo_empleado, DIRECCION_EMPLEADO=@direccion_empleado,
+NOMBRE_USUARIO=@nombre_usuario, PASSWORD_USUARIO = @password_usuario, ID_TIPO_USUARIO=@id_tipo_usuario WHERE ID_USUARIO=@id_usuario
+END
+GO
+/****** Object:  StoredProcedure [dbo].[EliminarUsuario]    Script Date: 1/12/2022 08:41:48 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[EliminarUsuario]
+	@id_usuario int
+AS
+BEGIN
+	Delete from TABLA_USUARIO where ID_USUARIO=@id_usuario
+END
+GO
+/****** Object:  StoredProcedure [dbo].[guardarusuarios]    Script Date: 1/12/2022 08:41:48 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[guardarusuarios] 
+	@nombre_empleado varchar(250), @apellido_empleado varchar(250), @fecha_nacimiento date, 
+@sexo_empleado varchar(50), @direccion_empleado varchar(500), @nombre_usuario varchar(50),
+@password_usuario varchar(50), @id_tipo_usuario int
+AS
+BEGIN
+	insert into TABLA_USUARIO (NOMBRE_EMPLEADO,APELLIDO_EMPLEADO,FECHA_NACIMIENTO,SEXO_EMPLEADO,DIRECCION_EMPLEADO,NOMBRE_USUARIO,PASSWORD_USUARIO,ID_TIPO_USUARIO) 
+	values (@nombre_empleado, @apellido_empleado, @fecha_nacimiento, @sexo_empleado,@direccion_empleado, @nombre_usuario, @password_usuario, @id_tipo_usuario)
+END
+GO
+
+/****** Object:  StoredProcedure [dbo].[actualizarIncentivo]    Script Date: 1/12/2022 21:06:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ CREATE procedure [dbo].[actualizarIncentivo]
+  @Id_Incentivo int,
+  @Nombre_Incentivo varchar(500),
+  @Descripcion_Incentivo varchar(1000),
+  @Id_Fondo_Incentivo int
+  as
+  BEGIN
+  update Tabla_Incentivos set Nombre_Incentivo= @Nombre_Incentivo, Descripcion_Incentivo= @Descripcion_Incentivo, Id_Fondo_Incentivo= @Id_Fondo_Incentivo where Id_Incentivo = @Id_Incentivo;
+  END
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ create procedure [dbo].[actualizarIncentivoEntregado]
+  @Id_Incentivo_Entregado int,
+  @Id_beneficiario int,
+  @Id_Incentivo int,
+  @Fecha_Entrega dateTime
+  as
+  BEGIN
+  update Tabla_Incentivos_Entregados set Id_Beneficiario= @Id_beneficiario, Id_Incentivo= @Id_Incentivo, Fecha_Entrega= @Fecha_Entrega where Id_Incentivo_Entregado = @Id_Incentivo_Entregado;
+  END
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [dbo].[eliminarIncentivo]
+  @id int
+  as
+  BEGIN
+  delete from Tabla_Incentivos where Id_Incentivo = @id;
+  END
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [dbo].[eliminarIncentivoEntregado]
+  @id int
+  as
+  BEGIN
+  delete from Tabla_Incentivos_Entregados where Id_Incentivo_Entregado = @id;
+  END
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[guardarIncentivo]
+  @Nombre_Incentivo varchar(500),
+  @Descripcion_Incentivo varchar(1000),
+  @Id_Fondo_Incentivo int
+  as
+  BEGIN
+  insert into Tabla_Incentivos(Nombre_Incentivo,Descripcion_Incentivo,Id_Fondo_Incentivo) values (@Nombre_Incentivo,@Descripcion_Incentivo,@Id_Fondo_Incentivo);
+  END
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [dbo].[guardarIncentivoEntregado]
+  @Id_Beneficiario int,
+  @Id_Incentivo int,
+  @Fecha_Entrega date
+  as
+  BEGIN
+  insert into Tabla_Incentivos_Entregados (Id_Beneficiario,Id_Incentivo,Fecha_Entrega,Id_Usuario) values (@Id_Beneficiario,@Id_Incentivo,@Fecha_Entrega,1);
+  END
+GO
+
+USE [BD_SISTEMA_ONG]
+GO
+SET IDENTITY_INSERT [dbo].[Tabla_Beneficiarios] ON 
+
+INSERT [dbo].[Tabla_Beneficiarios] ([Id_Beneficiario], [Nombre], [Apellido], [Numero_DUI], [Fecha_Nacimiento], [Sexo_Beneficiario], [Direccion_Beneficiario], [Id_Usuario]) VALUES (1, N'Jonathan josue', N'rodriguez carrillo', 45646545, CAST(N'2022-03-02' AS Date), N'Masculino', N'La libertad', 1)
+INSERT [dbo].[Tabla_Beneficiarios] ([Id_Beneficiario], [Nombre], [Apellido], [Numero_DUI], [Fecha_Nacimiento], [Sexo_Beneficiario], [Direccion_Beneficiario], [Id_Usuario]) VALUES (2, N'Marcela', N'Labor', 84656456, CAST(N'2002-01-11' AS Date), N'Femenino', N'la libertad', 1)
+SET IDENTITY_INSERT [dbo].[Tabla_Beneficiarios] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Tabla_Fondo_Incentivo] ON 
+
+INSERT [dbo].[Tabla_Fondo_Incentivo] ([Id_Fondo_Incentivo], [Fondo_Incentivo]) VALUES (1, N'Gorbierno de El Salvador')
+INSERT [dbo].[Tabla_Fondo_Incentivo] ([Id_Fondo_Incentivo], [Fondo_Incentivo]) VALUES (2, N'Fundación Huellas El Salvador')
+INSERT [dbo].[Tabla_Fondo_Incentivo] ([Id_Fondo_Incentivo], [Fondo_Incentivo]) VALUES (3, N'Cruz Verde Salvadoreña')
+INSERT [dbo].[Tabla_Fondo_Incentivo] ([Id_Fondo_Incentivo], [Fondo_Incentivo]) VALUES (4, N'Unidad Ecológica Salvadoreña UNES')
+SET IDENTITY_INSERT [dbo].[Tabla_Fondo_Incentivo] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Tabla_Incentivos] ON 
+
+INSERT [dbo].[Tabla_Incentivos] ([Id_Incentivo], [Nombre_Incentivo], [Descripcion_Incentivo], [Id_Fondo_Incentivo]) VALUES (1, N'Canasta', N'Canasta de viveres basicos', 1)
+INSERT [dbo].[Tabla_Incentivos] ([Id_Incentivo], [Nombre_Incentivo], [Descripcion_Incentivo], [Id_Fondo_Incentivo]) VALUES (2, N'Bonos en efectivo', N'Bonos de dinero en efectivo', 1)
+SET IDENTITY_INSERT [dbo].[Tabla_Incentivos] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Tabla_Incentivos_Entregados] ON 
+
+INSERT [dbo].[Tabla_Incentivos_Entregados] ([Id_Incentivo_Entregado], [Id_Beneficiario], [Id_Incentivo], [Fecha_Entrega], [Id_Usuario]) VALUES (1, 1, 1, CAST(N'2022-11-18T00:00:00.000' AS DateTime), 1)
+INSERT [dbo].[Tabla_Incentivos_Entregados] ([Id_Incentivo_Entregado], [Id_Beneficiario], [Id_Incentivo], [Fecha_Entrega], [Id_Usuario]) VALUES (2, 2, 1, CAST(N'2022-11-18T00:00:00.000' AS DateTime), 1)
+INSERT [dbo].[Tabla_Incentivos_Entregados] ([Id_Incentivo_Entregado], [Id_Beneficiario], [Id_Incentivo], [Fecha_Entrega], [Id_Usuario]) VALUES (3, 2, 2, CAST(N'2022-11-18T00:00:00.000' AS DateTime), 1)
+SET IDENTITY_INSERT [dbo].[Tabla_Incentivos_Entregados] OFF
+GO
+SET IDENTITY_INSERT [dbo].[TABLA_TIPO_USUARIO] ON 
+
+INSERT [dbo].[TABLA_TIPO_USUARIO] ([ID_TIPO_USUARIO], [TIPO_USUARIO]) VALUES (1, N'Administrador')
+INSERT [dbo].[TABLA_TIPO_USUARIO] ([ID_TIPO_USUARIO], [TIPO_USUARIO]) VALUES (2, N'Normal')
+SET IDENTITY_INSERT [dbo].[TABLA_TIPO_USUARIO] OFF
+GO
+SET IDENTITY_INSERT [dbo].[TABLA_USUARIO] ON 
+
+INSERT [dbo].[TABLA_USUARIO] ([ID_USUARIO], [NOMBRE_EMPLEADO], [APELLIDO_EMPLEADO], [FECHA_NACIMIENTO], [SEXO_EMPLEADO], [DIRECCION_EMPLEADO], [NOMBRE_USUARIO], [PASSWORD_USUARIO], [ID_TIPO_USUARIO]) VALUES (1, N'Juan', N'Perez', CAST(N'1989-05-25' AS Date), N'Masculino', N'San Salvador', N'juan', N'1234', 1)
+INSERT [dbo].[TABLA_USUARIO] ([ID_USUARIO], [NOMBRE_EMPLEADO], [APELLIDO_EMPLEADO], [FECHA_NACIMIENTO], [SEXO_EMPLEADO], [DIRECCION_EMPLEADO], [NOMBRE_USUARIO], [PASSWORD_USUARIO], [ID_TIPO_USUARIO]) VALUES (2, N'Jonathan', N'Rodriguez', CAST(N'1999-05-07' AS Date), N'Masculino', N'San Salvador', N'jony', N'prueba123', 1)
+INSERT [dbo].[TABLA_USUARIO] ([ID_USUARIO], [NOMBRE_EMPLEADO], [APELLIDO_EMPLEADO], [FECHA_NACIMIENTO], [SEXO_EMPLEADO], [DIRECCION_EMPLEADO], [NOMBRE_USUARIO], [PASSWORD_USUARIO], [ID_TIPO_USUARIO]) VALUES (3, N'Veronica', N'Idalia', CAST(N'1998-01-01' AS Date), N'Femenino', N'San Salvador', N'veronica', N'prueba123', 1)
+SET IDENTITY_INSERT [dbo].[TABLA_USUARIO] OFF
+GO
